@@ -1,17 +1,16 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "type": "array",
-  "default": [],
-  "items": {
-    "type": "object",
-    "additionalProperties": false,
-    "required": [
+  "$schema": "http://json-schema.org/draft-07/schema", // версия схемы: https://json-schema.org/understanding-json-schema/reference/schema.html
+  "type": "array", // тип корневого элемента: https://json-schema.org/understanding-json-schema/reference/type.html
+  "items": { // какие элементы допустимы внутри массива: https://json-schema.org/understanding-json-schema/reference/array.html#items
+    "type": "object", // должны быть объектами: https://json-schema.org/understanding-json-schema/reference/object.html
+    "required": [ // должны содержать следующие поля: https://json-schema.org/understanding-json-schema/reference/object.html#required-properties
       "id",
       "name",
       "number",
       "balance",
       "currency"
     ],
+    "additionalProperties": false,
     "properties": {
       "id": {
         "type": "integer"
@@ -25,8 +24,7 @@
         "pattern": "^•• \\d{4}$"
       },
       "balance": {
-        "type": "integer",
-        "default": 0
+        "type": "integer"
       },
       "currency": {
         "type": "string"
